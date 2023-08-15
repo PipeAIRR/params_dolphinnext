@@ -2,7 +2,7 @@
 #!/usr/bin/env Rscript
 
 ###################################################
-#input: a csv fille with the 4 colums: module, process, paramter and value.
+#input: a csv fille with the 4 colums: module, process, parameter and value.
 #output: a txt file with the correct syntax to set pipeline default parameters.
 #
 # The value in the file need to be with quotation marks, comma or parenthetically as defined in the process.
@@ -48,7 +48,7 @@ for(module in unique(table$module)){
     
     ## add process params
     line_process_params <- sapply(1:nrow(process_table), function(i){
-      paste0("\tparams.", module , "_",process, ".",process_table$paramter[i], " = ", process_table$value[i])
+      paste0("\tparams.", module , "_",process, ".",process_table$parameter[i], " = ", process_table$value[i])
     })
     
     params_lines <- c(params_lines, line_process_params)
